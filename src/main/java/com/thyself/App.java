@@ -1,3 +1,4 @@
+package com.thyself;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +9,7 @@ public class App {
 	public static void main(String args[]) {
 		SparkConf conf = new SparkConf().setAppName("Sample App");
 		JavaSparkContext sc = new JavaSparkContext(conf);
-		Integer NUM_SAMPLES = 300;
+		int NUM_SAMPLES = 300;
 		List<Integer> l = new ArrayList<>(NUM_SAMPLES);
 		for (int i = 0; i < NUM_SAMPLES; i++) {
 			l.add(i);
