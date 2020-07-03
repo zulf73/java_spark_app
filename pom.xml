@@ -11,19 +11,45 @@
             <source>1.8</source>
             <target>1.8</target>
         </configuration>
+</plugin>
+    <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>com.thyself.App</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
     </plugin>
-</plugins> </build>
+
+<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+<version>3.0.0-M5</version>
+</plugin>
+
+
+
+  </plugins>
+</build>
 <dependencies>
+  <dependency>
+    <groupId>org.apache.spark</groupId>
+    <artifactId>spark-core_2.12</artifactId>
+    <version>3.0.0</version>
+  </dependency>
 <dependency>
-<groupId>org.apache.spark</groupId>
-<artifactId>spark-core_2.12</artifactId>
-<version>3.0.0</version>
+  <groupId>org.scala-lang</groupId>
+  <artifactId>scala-library</artifactId>
+  <version>2.12.2</version>
 </dependency>
-<dependency>
-    <groupId>org.scala-lang</groupId>
-    <artifactId>scala-library</artifactId>
-    <version>2.12.2</version>
-</dependency>
+
 </dependencies>
 
 </project>
